@@ -18,7 +18,7 @@
   line-height: 20px;
   color: #000000;
 
-  @include _480 {
+  @include desktop {
     color: red;
   }
 
