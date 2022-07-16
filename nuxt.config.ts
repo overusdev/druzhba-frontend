@@ -29,6 +29,7 @@ export default defineNuxtConfig({
         },
     },
     css: [
+        '@/assets/styles/dedia.scss',
         '@/assets/styles/main.scss',
         '@/assets/styles/fonts/Montserrat.css',
         'reset-css/reset.css',
