@@ -11,6 +11,10 @@
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '@/assets/styles/main.scss';
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
 </style>

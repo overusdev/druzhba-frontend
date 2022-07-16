@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     },
     css: [
         '@/assets/styles/main.scss',
-        // '@csstools/normalize.css',
+        '@/assets/styles/fonts/Montserrat.css',
         'reset-css/reset.css',
     ],
     loading: { color: '#3B8070' },
