@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
+  },
+  "devDependencies": {
+    "nuxt": "3.0.0-rc.5",
+    "sass": "^1.53.0",
+    "sass-loader": "^10.3.1"
+  },
+  "dependencies": {
+    "@csstools/normalize.css": "^12.0.0",
+    "reset-css": "^5.0.1"
+  }
+}
