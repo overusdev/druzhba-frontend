@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         },
     },
     css: [
-        '@/assets/styles/dedia.scss',
+        '@/assets/styles/media.scss',
         '@/assets/styles/main.scss',
         '@/assets/styles/fonts/Montserrat.css',
         'reset-css/reset.css',
@@ -37,5 +37,5 @@ export default defineNuxtConfig({
     loading: { color: '#3B8070' },
     typescript: {
         strict: true
-    }
+    },
 })
