@@ -1,25 +1,150 @@
 <template>
   <div class="header">
-    Header text
+    <div class="container">
+      <div class="header__wrapper">
+        <div class="header__logo-wrapper">
+          <img 
+            src="~/assets/images/header/Logo.png"
+            alt="Лого"
+            class="header__logo"
+          >
+          <p class="header__logo-note">садовое некоммерческое товарищество</p>
+        </div>
+        <div
+          class="header__menu"
+          :class="{ 'header__menu_active' : store.getActive() }"
+          >
+          <nuxt-link
+            v-for="item in menuItems"
+            :key="item"
+            class="header__menu-item"
+          >
+            {{ item.name }}
+          </nuxt-link>
+        </div>
+        <Burger
+          :color="'#307526'"
+          class="header__burger"
+        />
+      </div>
+    </div>
+
   </div>
 </template>
 
-<script setup lang="ts">
-// definePageMeta({
-//   layout: false,
-// });
+<script lang="js">
+import Burger from '~/components/UI/Burger';
+import { useBurger } from "~/stores/burger";
+
+export default {
+  components: { Burger },
+  setup() {
+    const store = useBurger();
+    const menuItems = [
+      {
+        name: 'Новости',
+      },
+      {
+        name: 'Документы',
+      },
+      {
+        name: 'Обьявления',
+      },
+      {
+        name: 'Галерея',
+      },
+      {
+        name: 'Контакты',
+      },
+    ];
+    return {
+      menuItems,
+      store
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 @import '~/assets/styles/media.scss';
 .header {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: #000000;
+  &__logo {
+    width: 255px;
+    height: 60px;
+    margin-bottom: 8px;
+  }
 
-  @include desktop {
-    color: red;
+  &__logo-note {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 40px 14px 18px 14px;
+    border-bottom: 1px solid #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include desktop {
+      padding: 45px 0 18px 0;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 145px;
+    background: #fff;
+    left: -100%;
+    right: 0;
+    padding-top: 30px;
+    opacity: 0;
+    transition: .2s all ease-in-out;
+
+    &_active {
+      left: 0;
+      opacity: 1;
+    }
+
+    @include desktop {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      padding-top: 0;
+      opacity: 1;
+    }
+  }
+
+  &__menu-item {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+
+    @include desktop {
+      margin-left: 16px;
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 0;
+      cursor: pointer;
+      transition: .2s all ease-in-out;
+
+      &:hover {
+        color: #307526;
+      }
+    }
+  }
+
+  &__burger {
+    position: absolute;
+    right: 15px;
   }
 
 }

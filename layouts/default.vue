@@ -13,8 +13,18 @@
 
 <style lang="scss">
 @import '@/assets/styles/main.scss';
+@import '@/assets/styles/media.scss';
 
 html {
     font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+
+    @include desktop {
+      max-width: 1110px;
+    }
 }
 </style>

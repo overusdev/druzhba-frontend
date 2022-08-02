@@ -1,4 +1,8 @@
 
+// @function rem($n) {
+//     @return 1.66rem / 32 * $n;
+// }
+
 /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 @mixin _320 {
     @media (min-width:320px){
