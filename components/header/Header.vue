@@ -52,19 +52,19 @@ export default {
       },
       {
         name: 'Документы',
-        link: '',
+        link: '/docs',
       },
       {
         name: 'Обьявления',
-        link: '',
+        link: '/ads',
       },
       {
         name: 'Галерея',
-        link: '',
+        link: '/gallery',
       },
       {
         name: 'Контакты',
-        link: '',
+        link: '/contacts',
       },
     ];
     return {
