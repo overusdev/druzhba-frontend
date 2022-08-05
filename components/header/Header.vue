@@ -23,6 +23,7 @@
             :key="item"
             :to="item.link"
             class="header__menu-item"
+            @click="store.closeMenu()"
           >
             {{ item.name }}
           </NuxtLink>
@@ -137,6 +138,11 @@ export default {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 30px;
+    text-decoration: none;
+
+    &:visited {
+      color: #000;
+    }
 
     @include desktop {
       margin-left: 16px;
@@ -156,6 +162,9 @@ export default {
     position: absolute;
     right: 15px;
   }
+}
 
+.router-link-active {
+  color: #307526 !important;
 }
 </style>

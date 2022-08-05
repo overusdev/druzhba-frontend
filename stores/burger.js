@@ -2,33 +2,20 @@ export const useBurger = defineStore('burger', () => {
     let menuActive = ref(false);
     function toggleMenu() {
       menuActive.value = !menuActive.value;
-      console.log(menuActive);
     }
 
     function getActive() {
       return menuActive.value;
     }
+
+    function closeMenu() {
+      return menuActive.value = false;
+    }
   
     return {
       menuActive,
       toggleMenu,
-      getActive
+      getActive,
+      closeMenu
     };
 });
-
-// export const useBurger = defineStore('burger', {
-//   state: () => ({
-//     menuActive: false,
-//   }),
-
-//   getters: {
-//     getActive: (state) => state.menuActive,
-//   },
-
-//   actions: {
-//     toggleMenu() {
-//       this.menuActive = !this.menuActive;
-//     }
-//   },
-
-// })
