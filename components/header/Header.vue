@@ -2,25 +2,30 @@
   <div class="header">
     <div class="container">
       <div class="header__wrapper">
-        <div class="header__logo-wrapper">
-          <img 
-            src="~/assets/images/header/Logo.png"
-            alt="Лого"
-            class="header__logo"
-          >
-          <p class="header__logo-note">садовое некоммерческое товарищество</p>
-        </div>
+        <NuxtLink
+          to="/"
+        >
+          <div class="header__logo-wrapper">
+            <img 
+              src="~/assets/images/header/Logo.png"
+              alt="Лого"
+              class="header__logo"
+            >
+            <p class="header__logo-note">садовое некоммерческое товарищество</p>
+          </div>
+        </NuxtLink>
         <div
           class="header__menu"
           :class="{ 'header__menu_active' : store.getActive() }"
           >
-          <nuxt-link
+          <NuxtLink
             v-for="item in menuItems"
             :key="item"
+            :to="item.link"
             class="header__menu-item"
           >
             {{ item.name }}
-          </nuxt-link>
+          </NuxtLink>
         </div>
         <Burger
           :color="'#307526'"
@@ -43,18 +48,23 @@ export default {
     const menuItems = [
       {
         name: 'Новости',
+        link: '/news',
       },
       {
         name: 'Документы',
+        link: '',
       },
       {
         name: 'Обьявления',
+        link: '',
       },
       {
         name: 'Галерея',
+        link: '',
       },
       {
         name: 'Контакты',
+        link: '',
       },
     ];
     return {

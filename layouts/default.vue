@@ -2,7 +2,8 @@
   <div class="default">
     <Header />
     Some default layout shared across all pages
-    <slot />
+    <!-- <slot /> -->
+    <NuxtPage />
     <Footer />
   </div>
 </template>
