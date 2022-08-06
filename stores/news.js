@@ -21,7 +21,7 @@ export const useNews = defineStore('news', () => {
     ];
 
     function getLastNews() {
-        return news.length - 1;
+        return news[0];
     }
   
     return {

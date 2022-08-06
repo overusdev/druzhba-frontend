@@ -1,7 +1,7 @@
 <template>
   <div class="docs">
     <div class="container">
-      <PageTitle title="Документы"/>
+      <PageTitle title="Уставные документы"/>
     </div>
   </div>
 </template>

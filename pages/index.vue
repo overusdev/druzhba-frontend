@@ -1,13 +1,28 @@
 <template>
     <div class="main-page">
-        <h1 class="main-page__title">Main page title...</h1>
+      <div class="container">
+        {{ lastNews }}
+      </div>
     </div>
 </template>
 
-<script setup lang="ts">
+<script lang="js">
+import { useNews } from "~/stores/news";
+
 definePageMeta({
   layout: "default",
 });
+
+export default {
+  setup() {
+    const store = useNews();
+    const lastNews = store.getLastNews();
+    return {
+      store,
+      lastNews,
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
