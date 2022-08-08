@@ -114,7 +114,7 @@ export default {
     top: 145px;
     background: #fff;
     left: -100%;
-    right: 0;
+    width: 100%;
     padding-top: 30px;
     opacity: 0;
     transition: .2s all ease-in-out;
@@ -126,6 +126,7 @@ export default {
 
     @include desktop {
       position: static;
+      width: auto;
       flex-direction: row;
       align-items: center;
       padding-top: 0;

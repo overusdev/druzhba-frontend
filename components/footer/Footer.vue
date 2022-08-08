@@ -21,9 +21,14 @@
 
   .footer {
     background: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: 40px;
+
+    @include desktop {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      margin-top: 0;
+    }
 
     &__wrapper {
       border-top: 1px solid #000;

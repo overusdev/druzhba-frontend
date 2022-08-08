@@ -1,7 +1,27 @@
 <template>
-    <div class="main-page">
+    <div class="main">
       <div class="container">
-        {{ lastNews }}
+        <div class="main__head">
+          <div class="main__last-news">
+            <h2 class="main__last-news-title">{{ lastNews.title }}</h2>
+            <p
+              class="main__last-news-description"
+              v-html="lastNews.noteDescription"
+            ></p>
+
+            <Nuxt-link
+              class="main__last-news-more"
+            >
+              Подробнее
+            </Nuxt-link>
+          </div>
+
+            <img
+              src="~/assets/images/garden.png"
+              alt="Лого"
+              class="main__pic"
+            >
+        </div>
       </div>
     </div>
 </template>
@@ -26,5 +46,71 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import '@/assets/styles/main.scss';
+@import '~/assets/styles/media.scss';
+.main {
+  &__head {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    @include desktop {
+      margin-top: 44px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  }
+
+  &__last-news {
+    padding: 0 14px;
+    margin-bottom: 16px;
+    @include desktop {
+      max-width: 410px;
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__last-news-title {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color: #307526;
+    margin-bottom: 17px;
+  }
+
+  &__last-news-description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 36px;
+  }
+
+  &__last-news-more {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    background: #307526;
+    text-transform: uppercase;
+    padding: 12px;
+    color: #fff;
+
+    @include desktop {
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+    @include desktop {
+      width: 531px;
+      height: 344px;
+    }
+  }
+
+}
 </style>
