@@ -94,7 +94,7 @@ export default {
 
   &__wrapper {
     position: relative;
-    padding: 40px 14px 18px 14px;
+    padding: 40px 0 18px 0;
     border-bottom: 1px solid #000;
 
     display: flex;
@@ -161,7 +161,7 @@ export default {
 
   &__burger {
     position: absolute;
-    right: 15px;
+    right: 0;
   }
 }
 

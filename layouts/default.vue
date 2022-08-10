@@ -23,6 +23,7 @@ html {
 .container {
     margin-right: auto;
     margin-left: auto;
+    padding: 0 14px;
 
     @include desktop {
       max-width: 1110px;

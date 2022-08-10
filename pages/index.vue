@@ -11,6 +11,7 @@
 
             <Nuxt-link
               class="main__last-news-more"
+              :to="`/news/${lastNews.id}`"
             >
               Подробнее
             </Nuxt-link>
@@ -63,7 +64,6 @@ export default {
   }
 
   &__last-news {
-    padding: 0 14px;
     margin-bottom: 16px;
     @include desktop {
       max-width: 410px;
