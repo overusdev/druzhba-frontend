@@ -3,6 +3,8 @@
         <NuxtLink
             v-for="item in items"
             :key="item.id"
+            :to="item.link"
+            class="main-items__link"
         >
             <span
                 class="main-items__item"
@@ -44,6 +46,10 @@
             flex-wrap: wrap;
         }
 
+        &__link {
+            text-decoration: none;
+        }
+
         &__item {
             height: 200px;
             width: 350px;
@@ -60,6 +66,7 @@
             text-align: center;
             letter-spacing: 0.01em;
             text-transform: uppercase;
+            text-decoration: none;
 
             @include desktop {
                 margin-bottom: 0;

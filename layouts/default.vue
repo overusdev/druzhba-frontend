@@ -3,7 +3,7 @@
     <Header />
     <!-- Some default layout shared across all pages -->
     <!-- <slot /> -->
-    <NuxtPage />
+    <NuxtPage class="nuxt-page" />
     <Footer />
   </div>
 </template>
@@ -18,6 +18,10 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
+}
+
+.nuxt-page {
+  min-height: 550px;
 }
 
 .container {

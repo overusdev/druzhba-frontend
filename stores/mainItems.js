@@ -7,6 +7,7 @@ export const useMain = defineStore('main', () => {
             noteDescription: '3',
             description: '3',
             date: '21.05.2022',
+            link: '/online-votes'
         },
         {
             id: 1,
@@ -14,7 +15,7 @@ export const useMain = defineStore('main', () => {
             noteDescription: '3',
             description: '3',
             date: '21.05.2022',
-            link: '/ads'
+            link: '/el-pay'
         },
         {
             id: 2,
@@ -22,6 +23,7 @@ export const useMain = defineStore('main', () => {
             noteDescription: '2',
             description: '',
             date: '20.05.2022',
+            link: '/feedback'
         },
     ];
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="page">
-    <h1 class="page__title">{{ title }}</h1>
+  <div class="page-title">
+    <h1 class="page-title__text">{{ title }}</h1>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
 <style lang="scss" scoped>
 @import '~/assets/styles/media.scss';
 
-.page {
-    &__title {
+.page-title {
+    &__text {
         margin-top: 40px;
         display: inline-flex;
         font-style: normal;
