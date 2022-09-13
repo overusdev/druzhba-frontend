@@ -8,9 +8,9 @@
     </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import { useNews } from "~/stores/news";
-import PageTitle from '~/components/page-title/PageTitle';
+import PageTitle from '~/components/page-title/PageTitle.vue';
 
 export default {
   components: { PageTitle },
