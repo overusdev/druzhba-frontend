@@ -2,25 +2,31 @@
   <div class="header">
     <div class="container">
       <div class="header__wrapper">
-        <div class="header__logo-wrapper">
-          <img 
-            src="~/assets/images/header/Logo.png"
-            alt="Лого"
-            class="header__logo"
-          >
-          <p class="header__logo-note">садовое некоммерческое товарищество</p>
-        </div>
+        <NuxtLink
+          to="/"
+        >
+          <div class="header__logo-wrapper">
+            <img 
+              src="~/assets/images/header/Logo.png"
+              alt="Лого"
+              class="header__logo"
+            >
+            <p class="header__logo-note">садовое некоммерческое товарищество</p>
+          </div>
+        </NuxtLink>
         <div
           class="header__menu"
           :class="{ 'header__menu_active' : store.getActive() }"
           >
-          <nuxt-link
+          <NuxtLink
             v-for="item in menuItems"
             :key="item"
+            :to="item.link"
             class="header__menu-item"
+            @click="store.closeMenu()"
           >
             {{ item.name }}
-          </nuxt-link>
+          </NuxtLink>
         </div>
         <Burger
           :color="'#307526'"
@@ -43,18 +49,23 @@ export default {
     const menuItems = [
       {
         name: 'Новости',
+        link: '/news',
       },
       {
         name: 'Документы',
+        link: '/docs',
       },
       {
         name: 'Обьявления',
+        link: '/ads',
       },
       {
         name: 'Галерея',
+        link: '/gallery',
       },
       {
         name: 'Контакты',
+        link: '/contacts',
       },
     ];
     return {
@@ -83,7 +94,7 @@ export default {
 
   &__wrapper {
     position: relative;
-    padding: 40px 14px 18px 14px;
+    padding: 40px 0 18px 0;
     border-bottom: 1px solid #000;
 
     display: flex;
@@ -103,7 +114,7 @@ export default {
     top: 145px;
     background: #fff;
     left: -100%;
-    right: 0;
+    width: 100%;
     padding-top: 30px;
     opacity: 0;
     transition: .2s all ease-in-out;
@@ -115,6 +126,7 @@ export default {
 
     @include desktop {
       position: static;
+      width: auto;
       flex-direction: row;
       align-items: center;
       padding-top: 0;
@@ -127,6 +139,11 @@ export default {
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 30px;
+    text-decoration: none;
+
+    &:visited {
+      color: #000;
+    }
 
     @include desktop {
       margin-left: 16px;
@@ -144,8 +161,11 @@ export default {
 
   &__burger {
     position: absolute;
-    right: 15px;
+    right: 0;
   }
+}
 
+.router-link-active {
+  color: #307526 !important;
 }
 </style>

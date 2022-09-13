@@ -1,8 +1,9 @@
 <template>
   <div class="default">
     <Header />
-    Some default layout shared across all pages
-    <slot />
+    <!-- Some default layout shared across all pages -->
+    <!-- <slot /> -->
+    <NuxtPage />
     <Footer />
   </div>
 </template>
@@ -22,6 +23,7 @@ html {
 .container {
     margin-right: auto;
     margin-left: auto;
+    padding: 0 14px;
 
     @include desktop {
       max-width: 1110px;

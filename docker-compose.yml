@@ -1,0 +1,12 @@
+# frontend:
+#   image: node:16-alpine3.14
+#   command: yarn dev
+#   container_name: druzhba-frontend
+#   volumes:
+#     - ./frontend:/usr/src/druzhba/frontend
+#   working_dir: /usr/src/projects/druzhba/frontend
+#   ports:
+#     - 8001:8001
+#     - 24678:24678
+#   environment:
+#     HOST: 0.0.0.0

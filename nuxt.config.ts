@@ -50,5 +50,14 @@ export default defineNuxtConfig({
               ],
             },
         ],
+        // 'nuxt-vite',
     ],
+    // vite: {
+    //     server: {
+    //         hmr: {
+    //             protocol: 'ws',
+    //             host: 'localhost'
+    //         }
+    //     }
+    // }
 })
