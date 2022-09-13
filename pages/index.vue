@@ -10,12 +10,12 @@
               v-html="lastNews.noteDescription"
             ></p>
 
-            <!-- <Nuxt-link
+            <Nuxt-link
               class="main__last-news-more"
               :to="`/news/${lastNews.id}`"
             >
               Подробнее
-            </Nuxt-link> -->
+            </Nuxt-link>
           </div>
 
             <img
