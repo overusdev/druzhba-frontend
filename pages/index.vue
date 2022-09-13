@@ -2,6 +2,7 @@
     <div class="main">
       <div class="container">
         <div class="main__head">
+
           <div class="main__last-news">
             <h2 class="main__last-news-title">{{ lastNews.title }}</h2>
             <p
@@ -9,12 +10,12 @@
               v-html="lastNews.noteDescription"
             ></p>
 
-            <Nuxt-link
+            <!-- <Nuxt-link
               class="main__last-news-more"
               :to="`/news/${lastNews.id}`"
             >
               Подробнее
-            </Nuxt-link>
+            </Nuxt-link> -->
           </div>
 
             <img
@@ -22,6 +23,11 @@
               alt="Лого"
               class="main__pic"
             >
+
+        </div>
+
+        <div class="main__body">
+          <MainBlocks/>
         </div>
       </div>
     </div>
@@ -52,10 +58,10 @@ export default {
   &__head {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin: 20px 0;
 
     @include desktop {
-      margin-top: 44px;
+      margin: 44px 0;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -110,6 +116,10 @@ export default {
       width: 531px;
       height: 344px;
     }
+  }
+
+  &__body {
+    margin-bottom: 36px;
   }
 
 }

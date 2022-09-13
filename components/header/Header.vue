@@ -47,10 +47,10 @@ export default {
   setup() {
     const store = useBurger();
     const menuItems = [
-      {
-        name: 'Новости',
-        link: '/news',
-      },
+      // {
+      //   name: 'Новости',
+      //   link: '/news',
+      // },
       {
         name: 'Документы',
         link: '/docs',
@@ -78,6 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/styles/media.scss';
+@import '~/assets/styles/variables.scss';
 .header {
   &__logo {
     width: 255px;
@@ -117,7 +118,7 @@ export default {
     width: 100%;
     padding-top: 30px;
     opacity: 0;
-    transition: .2s all ease-in-out;
+    transition: $transitionDefault;
 
     &_active {
       left: 0;
@@ -151,7 +152,7 @@ export default {
       line-height: 20px;
       margin-bottom: 0;
       cursor: pointer;
-      transition: .2s all ease-in-out;
+      transition: $transitionDefault;
 
       &:hover {
         color: #307526;
