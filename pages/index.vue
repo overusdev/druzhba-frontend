@@ -27,7 +27,8 @@
         </div>
 
         <div class="main__body">
-          <MainBlocks/>
+          <MainBlocks
+          :items="mainItems"/>
         </div>
       </div>
     </div>
@@ -35,6 +36,7 @@
 
 <script lang="js">
 import { useNews } from "~/stores/news";
+import { useMain } from '~/stores/mainItems';
 
 definePageMeta({
   layout: "default",
@@ -42,11 +44,15 @@ definePageMeta({
 
 export default {
   setup() {
-    const store = useNews();
-    const lastNews = store.getLastNews();
+    const storeNews = useNews();
+    const storeMain = useMain();
+    const lastNews = storeNews.getLastNews();
+    const mainItems = storeMain.getMainItems();
     return {
-      store,
+      storeMain,
+      storeNews,
       lastNews,
+      mainItems,
     }
   }
 }

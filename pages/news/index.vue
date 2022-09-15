@@ -3,14 +3,10 @@
     <div class="container">
       <PageTitle title="Новости СНТ"/>
       <div class="news__item-wrapper">
-        <div
-          v-for="item in store.news"
-          :key="item.title"
-          class="news__item"
-        >
-          {{ item.title }}
-        
-        </div>
+          <MainBlocks
+            inner
+            more
+            :items="allNews"/>
       </div>
     </div>
   </div>
@@ -23,10 +19,11 @@ import { useNews } from "~/stores/news";
 export default {
   components: { PageTitle },
   setup() {
-    const store = useNews();
+    const storeNews = useNews();
+    const allNews = storeNews.news;
     return {
-      store,
-      PageTitle
+      PageTitle,
+      allNews
     }
   }
 }

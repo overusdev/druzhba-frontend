@@ -6,7 +6,6 @@ export const useMain = defineStore('main', () => {
             title: 'ONLINE<br> ГОЛОСОВАНИЕ',
             noteDescription: '3',
             description: '3',
-            date: '21.05.2022',
             link: '/online-votes'
         },
         {
@@ -14,7 +13,6 @@ export const useMain = defineStore('main', () => {
             title: 'ОПЛАТИТЬ<br> ЭЛЕКТРОЭНЕРГИЮ/<br>ЦЕЛЕВЫЕ<br> ВЗНОСЫ',
             noteDescription: '3',
             description: '3',
-            date: '21.05.2022',
             link: '/el-pay'
         },
         {
@@ -22,7 +20,6 @@ export const useMain = defineStore('main', () => {
             title: 'ОТПРАВИТЬ<br> ЖАЛОБУ<br> ИЛИ<br> ПРЕДЛОЖЕНИЕ<br> В ПРАВЛЕНИЕ',
             noteDescription: '2',
             description: '',
-            date: '20.05.2022',
             link: '/feedback'
         },
     ];

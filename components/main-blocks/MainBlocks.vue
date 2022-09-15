@@ -5,27 +5,49 @@
             :key="item.id"
             :to="item.link"
             class="main-items__link"
+            :class="{ 'main-items__link--inner' : inner }"
         >
+
+            <span
+                v-if="item.date"
+                class="main-items__date--inner">
+                {{ item.date }}
+            </span>
             <span
                 class="main-items__item"
                 v-html="item.title"
+                :class="{ 'main-items__item--inner' : inner }"
             >
             </span>
+            <span
+                v-if="more"
+                class="main-items__more"
+            >
+            Подробнее</span>
+
         </NuxtLink>
     </div>
 </template>
 
 <script lang="js">
-    import { useMain } from '~/stores/mainItems';
 
     export default {
-        setup() {
-            const store = useMain();
-            const items = store.getMainItems();
+        props: {
+            items: {
+                type: Array,
+                required: true,
+            },
+            inner: Boolean,
+            more: Boolean,
+        },
+        setup(props) {
+            // console.log(props);
+            // const store = useMain();
+            // const items = store.getMainItems();
 
-            return {
-                items
-            }
+            // return {
+            //     props.items,
+            // }
         }
     }
 
@@ -47,10 +69,8 @@
         }
 
         &__link {
+            position: relative;
             text-decoration: none;
-        }
-
-        &__item {
             height: 200px;
             width: 350px;
             color: #fff;
@@ -60,9 +80,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 20px;
             text-align: center;
             letter-spacing: 0.01em;
             text-transform: uppercase;
@@ -82,6 +99,53 @@
                     color: #307526;
                 }
             }
+
+            &--inner {
+                display: block;
+                text-align: left;
+            }
+        }
+
+        &__date--inner {
+            position: absolute;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            top: 24px;
+            left: 36px;
+
+            @include desktop {
+                top: 24px;
+                left: 36px;
+            }
+
+        }
+
+        &__item {
+
+            &--inner {
+                position: absolute;
+                font-weight: 400;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                text-transform: none;
+                top: 64px;
+                    left: 36px;
+
+                @include desktop {
+                    top: 64px;
+                    left: 36px;
+                }
+            }
+        }
+        &__more {
+            position: absolute;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            left: 36px;
+            bottom: 24px;
         }
     }
 

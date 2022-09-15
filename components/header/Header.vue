@@ -47,10 +47,10 @@ export default {
   setup() {
     const store = useBurger();
     const menuItems = [
-      // {
-      //   name: 'Новости',
-      //   link: '/news',
-      // },
+      {
+        name: 'Новости',
+        link: '/news',
+      },
       {
         name: 'Документы',
         link: '/docs',

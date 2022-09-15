@@ -9,14 +9,14 @@ export const useNews = defineStore('news', () => {
         },
         {
             id: 1,
-            title: '2',
+            title: 'Тарифы на<br> электроэнергию',
             noteDescription: '2',
             description: '2',
             date: '20.05.2022',
         },
         {
             id: 2,
-            title: '3',
+            title: 'Докупаем пульты<br> на ворота',
             noteDescription: '3',
             description: '3',
             date: '21.05.2022',
@@ -34,6 +34,7 @@ export const useNews = defineStore('news', () => {
     return {
         news,
         getLastNews,
-        getNewsById
+        getNewsById,
+        // getAllNews,
     };
 });
