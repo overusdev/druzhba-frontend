@@ -1,6 +1,9 @@
 <template>
   <div class="page-title">
-    <h1 class="page-title__text">{{ title }}</h1>
+    <h1
+      class="page-title__text"
+      v-html="title">
+    </h1>
   </div>
 </template>
 
@@ -27,6 +30,9 @@ export default {
         line-height: 37px;
         color: #307526;
         border-bottom: 3px solid #307526;
+    }
+    br {
+      display: none;
     }
 }
 </style>

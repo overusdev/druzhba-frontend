@@ -103,6 +103,10 @@
             &--inner {
                 display: block;
                 text-align: left;
+                width: 100%;
+                @include desktop {
+                    width: 350px;
+                }
             }
         }
 
