@@ -34,6 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/styles/media.scss';
+@import '~/assets/styles/variables.scss';
     .burger {
         position: relative;
         height: 28px;
@@ -41,7 +42,8 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: .8s all ease-in-out;
+        // transition: .8s all ease-in-out;
+        transition: $transitionDefault;
 
         &_state {
             &_active {
@@ -62,13 +64,14 @@ export default {
         }
 
         &__line {
-            transition: .3s all ease-in-out;
+            // transition: .3s all ease-in-out;
+            transition: $transitionDefault;
             background: #307526;
             height: 5px;
             transform-origin: 4px 0px;
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        opacity 0.55s ease;
+            transition: transform 0.1s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.1s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.5s ease;
         }
 
         @include desktop {

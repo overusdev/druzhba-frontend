@@ -24,8 +24,8 @@
     margin-top: 40px;
 
     @include desktop {
-      position: fixed;
-      bottom: 0;
+      // position: fixed;
+      // bottom: 0;
       width: 100%;
       margin-top: 0;
     }

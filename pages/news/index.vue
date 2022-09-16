@@ -3,14 +3,17 @@
     <div class="container">
       <PageTitle title="Новости СНТ"/>
       <div class="news__item-wrapper">
-        <div
-          v-for="item in store.news"
-          :key="item.title"
-          class="news__item"
-        >
-          {{ item.title }}
-        
+        <div class="news__header">
+            <img
+              src="~/assets/images/garden.png"
+              alt="Лого"
+              class="news__pic"
+            >
         </div>
+          <MainBlocks
+            inner
+            more
+            :items="allNews"/>
       </div>
     </div>
   </div>
@@ -23,11 +26,35 @@ import { useNews } from "~/stores/news";
 export default {
   components: { PageTitle },
   setup() {
-    const store = useNews();
+    const storeNews = useNews();
+    const allNews = storeNews.news;
     return {
-      store,
-      PageTitle
+      PageTitle,
+      allNews
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  @import '~/assets/styles/media.scss';
+  @import '~/assets/styles/variables.scss';
+
+  .news {
+    &__header {
+      margin: 48px 0;
+      display: flex;
+      justify-content: start;
+    }
+
+    &__pic {
+      width: 100%;
+
+      @include desktop {
+          width: 273px;
+          height: 177px;
+      }
+    }
+  }
+
+</style>
