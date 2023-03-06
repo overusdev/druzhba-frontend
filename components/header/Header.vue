@@ -141,6 +141,7 @@ export default {
     line-height: 24px;
     margin-bottom: 30px;
     text-decoration: none;
+    color: #000;
 
     &:visited {
       color: #000;
