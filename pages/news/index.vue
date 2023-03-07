@@ -44,7 +44,7 @@ export default {
     &__header {
       margin: 48px 0;
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
     }
 
     &__pic {
