@@ -38,6 +38,22 @@ export default defineNuxtConfig({
     typescript: {
         strict: true
     },
+    modules: ['@nuxtjs/axios'],
+    axios: {
+        baseURL: 'http://localhost:3000', // Used as fallback if no runtime config is provided
+    },
+    
+    publicRuntimeConfig: {
+        axios: {
+            browserBaseURL: process.env.BROWSER_BASE_URL
+        }
+    },
+    
+    privateRuntimeConfig: {
+        axios: {
+          baseURL: process.env.BASE_URL
+        }
+    },
     buildModules: [
         [
             '@pinia/nuxt',
@@ -50,14 +66,5 @@ export default defineNuxtConfig({
               ],
             },
         ],
-        // 'nuxt-vite',
     ],
-    // vite: {
-    //     server: {
-    //         hmr: {
-    //             protocol: 'ws',
-    //             host: 'localhost'
-    //         }
-    //     }
-    // }
 })
