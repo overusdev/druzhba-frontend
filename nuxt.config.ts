@@ -38,17 +38,16 @@ export default defineNuxtConfig({
     typescript: {
         strict: true
     },
-    modules: ['@nuxtjs/axios'],
     axios: {
         baseURL: 'http://localhost:3000', // Used as fallback if no runtime config is provided
     },
     
     publicRuntimeConfig: {
         axios: {
-            browserBaseURL: process.env.BROWSER_BASE_URL
-        }
-    },
-    
+          baseURL: process.env.BASE_URL,
+        },
+      },
+    modules: [["@nuxtjs/axios", { proxyHeaders: false }], "@nuxtjs/proxy"],
     privateRuntimeConfig: {
         axios: {
           baseURL: process.env.BASE_URL
