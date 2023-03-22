@@ -61,6 +61,7 @@ export default {
 <style lang="scss" scoped>
 @import '~/assets/styles/media.scss';
 .main {
+  background: #ccc;
   &__head {
     display: flex;
     flex-direction: column;
