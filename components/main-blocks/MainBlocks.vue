@@ -71,7 +71,6 @@
             position: relative;
             text-decoration: none;
             height: 200px;
-            width: 350px;
             color: #fff;
             background: rgba(48, 117, 38, 0.8);
             border: 1px solid #307526;
@@ -85,6 +84,7 @@
             text-decoration: none;
 
             @include desktop {
+                width: 350px;
                 margin-bottom: 0;
                 font-size: 22px;
                 line-height: 27px;
